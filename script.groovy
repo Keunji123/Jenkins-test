@@ -1,5 +1,5 @@
 def buildApp() {
-	echo 'building the applications...'
+	sh "docker-compose build web"
 }
 
 def testApp() {
@@ -7,7 +7,6 @@ def testApp() {
 }
 
 def deployApp() {
-	echo 'deploying the applicaiton...'
-	echo "deploying version ${params.VERSION}"
+	sh "docker-compose up -d"
 }
 return this

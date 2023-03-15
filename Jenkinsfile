@@ -12,6 +12,11 @@ pipeline {
                 }
             }
         }
+        stage("Checkout") {
+            steps {
+                checkout SCM
+            }
+        }
         stage("build") {
             steps {
                 script {
